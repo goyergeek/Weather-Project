@@ -5,8 +5,8 @@ Weather-Project
 	<li>git clone https://github.com/goyergeek/Weather-Project.git</li>
 	<li>npm install</li>
 	<li>create NOAAtoken.js file in the routes folder</li>
-		<pre>var NOAAtoken = "<your token here>";
-			 module.exports.NOAAtoken = NOAAtoken;</pre>
+		<pre>var NOAAtoken = "your token here";
+		module.exports.NOAAtoken = NOAAtoken;</pre>
 	 <li>node app.js</li>
 
 <p> Web App project that will retrieve, format, retain, and display data retrieved from NOAA NCDC web api. </p>
