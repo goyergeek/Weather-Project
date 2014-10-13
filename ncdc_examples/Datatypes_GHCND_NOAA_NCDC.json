@@ -1,0 +1,945 @@
+//	http://www.ncdc.noaa.gov/cdo-web/api/v2/datatypes?datasetid=GHCND
+//	Return all datatypes for dataset GHCND
+
+{
+    "results": [
+        {
+            "id": "ACMC",
+            "name": "Average cloudiness midnight to midnight from 30-second ceilometer data (percent)",
+            "datacoverage": 1,
+            "mindate": "1994-03-19",
+            "maxdate": "1996-05-28"
+        },
+        {
+            "id": "ACMH",
+            "name": "Average cloudiness midnight to midnight from manual observations (percent)",
+            "datacoverage": 1,
+            "mindate": "1965-01-01",
+            "maxdate": "2005-12-31"
+        },
+        {
+            "id": "ACSC",
+            "name": "Average cloudiness sunrise to sunset from 30-second ceilometer data (percent)",
+            "datacoverage": 1,
+            "mindate": "1994-02-01",
+            "maxdate": "1996-05-28"
+        },
+        {
+            "id": "ACSH",
+            "name": "Average cloudiness sunrise to sunset from manual observations (percent)",
+            "datacoverage": 1,
+            "mindate": "1965-01-01",
+            "maxdate": "2005-12-31"
+        },
+        {
+            "id": "AWND",
+            "name": "Average daily wind speed (tenths of meters per second)",
+            "datacoverage": 1,
+            "mindate": "1982-01-01",
+            "maxdate": "2014-10-10"
+        },
+        {
+            "id": "DAEV",
+            "name": "Number of days included in the multiday evaporation total (MDEV)",
+            "datacoverage": 1,
+            "mindate": "1948-08-02",
+            "maxdate": "2012-07-23"
+        },
+        {
+            "id": "DAPR",
+            "name": "Number of days included in the multiday precipitation total (MDPR)",
+            "datacoverage": 1,
+            "mindate": "1832-05-11",
+            "maxdate": "2014-09-29"
+        },
+        {
+            "id": "DASF",
+            "name": "Number of days included in the multiday snow fall total (MDSF) ",
+            "datacoverage": 1,
+            "mindate": "1888-03-13",
+            "maxdate": "2014-03-03"
+        },
+        {
+            "id": "DATN",
+            "name": "Number of days included in the multiday minimum temperature (MDTN)",
+            "datacoverage": 1,
+            "mindate": "1863-05-04",
+            "maxdate": "2014-09-03"
+        },
+        {
+            "id": "DATX",
+            "name": "Number of days included in the multiday maximum temperature (MDTX)",
+            "datacoverage": 1,
+            "mindate": "1863-05-04",
+            "maxdate": "2014-09-02"
+        },
+        {
+            "id": "DAWM",
+            "name": "Number of days included in the multiday wind movement (MDWM)",
+            "datacoverage": 1,
+            "mindate": "1935-09-23",
+            "maxdate": "2010-06-21"
+        },
+        {
+            "id": "DWPR",
+            "name": "Number of days with non-zero precipitation included in multiday precipitation total (MDPR)",
+            "datacoverage": 1,
+            "mindate": "1832-05-11",
+            "maxdate": "2014-09-03"
+        },
+        {
+            "id": "EVAP",
+            "name": "Evaporation of water from evaporation pan (tenths of mm)",
+            "datacoverage": 1,
+            "mindate": "1893-01-09",
+            "maxdate": "2014-09-30"
+        },
+        {
+            "id": "FMTM",
+            "name": "Time of fastest mile or fastest 1-minute wind (hours and minutes, i.e, HHMM)",
+            "datacoverage": 1,
+            "mindate": "1982-01-01",
+            "maxdate": "2013-03-31"
+        },
+        {
+            "id": "FRGB",
+            "name": "Base of frozen ground layer (cm)",
+            "datacoverage": 1,
+            "mindate": "1946-10-29",
+            "maxdate": "1964-12-31"
+        },
+        {
+            "id": "FRGT",
+            "name": "Top of frozen ground layer (cm)",
+            "datacoverage": 1,
+            "mindate": "1946-10-29",
+            "maxdate": "1964-12-31"
+        },
+        {
+            "id": "FRTH",
+            "name": "Thickness of frozen ground layer (cm)",
+            "datacoverage": 1,
+            "mindate": "1948-01-01",
+            "maxdate": "1964-12-31"
+        },
+        {
+            "id": "GAHT",
+            "name": "Difference between river and gauge height (cm)",
+            "datacoverage": 1,
+            "mindate": "1913-07-25",
+            "maxdate": "1964-12-31"
+        },
+        {
+            "id": "MDEV",
+            "name": "Multiday evaporation total (tenths of mm; use with DAEV)",
+            "datacoverage": 1,
+            "mindate": "1948-08-02",
+            "maxdate": "2010-08-16"
+        },
+        {
+            "id": "MDPR",
+            "name": "Multiday precipitation total (tenths of mm; use with DAPR and DWPR, if available)",
+            "datacoverage": 1,
+            "mindate": "1832-05-11",
+            "maxdate": "2014-09-29"
+        },
+        {
+            "id": "MDSF",
+            "name": "Multiday snowfall total ",
+            "datacoverage": 1,
+            "mindate": "1859-12-29",
+            "maxdate": "2014-03-03"
+        },
+        {
+            "id": "MDTN",
+            "name": "Multiday minimum temperature (tenths of degrees C; use with DATN)",
+            "datacoverage": 1,
+            "mindate": "1863-05-04",
+            "maxdate": "2014-09-03"
+        },
+        {
+            "id": "MDTX",
+            "name": "Multiday maximum temperature (tenths of degress C; use with DATX)",
+            "datacoverage": 1,
+            "mindate": "1863-05-04",
+            "maxdate": "2014-09-02"
+        },
+        {
+            "id": "MDWM",
+            "name": "Multiday wind movement (km)",
+            "datacoverage": 1,
+            "mindate": "1935-09-23",
+            "maxdate": "2010-06-21"
+        },
+        {
+            "id": "MNPN",
+            "name": "Daily minimum temperature of water in an evaporation pan (tenths of degrees C)",
+            "datacoverage": 1,
+            "mindate": "1950-11-28",
+            "maxdate": "2014-09-30"
+        },
+        {
+            "id": "MXPN",
+            "name": "Daily maximum temperature of water in an evaporation pan (tenths of degrees C)",
+            "datacoverage": 1,
+            "mindate": "1921-12-09",
+            "maxdate": "2014-09-30"
+        },
+        {
+            "id": "PGTM",
+            "name": "Peak gust time (hours and minutes, i.e., HHMM)",
+            "datacoverage": 1,
+            "mindate": "1948-01-01",
+            "maxdate": "2014-10-10"
+        },
+        {
+            "id": "PRCP",
+            "name": "Precipitation (tenths of mm)",
+            "datacoverage": 1,
+            "mindate": "1781-01-01",
+            "maxdate": "2014-10-12"
+        },
+        {
+            "id": "PSUN",
+            "name": "Daily percent of possible sunshine (percent)",
+            "datacoverage": 1,
+            "mindate": "1965-01-01",
+            "maxdate": "2014-10-09"
+        },
+        {
+            "id": "SN01",
+            "name": "Minimum soil temperature (tenths of degrees C) with unknown cover at 5 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-01-01",
+            "maxdate": "2009-08-31"
+        },
+        {
+            "id": "SN02",
+            "name": "Minimum soil temperature (tenths of degrees C) with unknown cover at 10 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-01-01",
+            "maxdate": "2012-10-31"
+        },
+        {
+            "id": "SN03",
+            "name": "Minimum soil temperature (tenths of degrees C) with unknown cover at 20 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-01-01",
+            "maxdate": "2010-01-10"
+        },
+        {
+            "id": "SN11",
+            "name": "Minimum soil temperature (tenths of degrees C) with grass cover at 5 cm depth",
+            "datacoverage": 0.9677,
+            "mindate": "1982-01-01",
+            "maxdate": "2012-02-29"
+        },
+        {
+            "id": "SN12",
+            "name": "Minimum soil temperature (tenths of degrees C) with grass cover at 10 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-01-01",
+            "maxdate": "2012-09-30"
+        },
+        {
+            "id": "SN13",
+            "name": "Minimum soil temperature (tenths of degrees C) with grass cover at 20 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-01-01",
+            "maxdate": "2012-02-29"
+        },
+        {
+            "id": "SN14",
+            "name": "Minimum soil temperature (tenths of degrees C) with grass cover at 50 cm depth",
+            "datacoverage": 1,
+            "mindate": "2010-01-01",
+            "maxdate": "2011-01-31"
+        },
+        {
+            "id": "SN21",
+            "name": "Minimum soil temperature (tenths of degrees C) with fallow cover at 5 cm depth",
+            "datacoverage": 0.9176,
+            "mindate": "1983-07-01",
+            "maxdate": "2010-12-31"
+        },
+        {
+            "id": "SN22",
+            "name": "Minimum soil temperature (tenths of degrees C) with fallow cover at 10 cm depth",
+            "datacoverage": 1,
+            "mindate": "1983-04-01",
+            "maxdate": "2010-12-31"
+        },
+        {
+            "id": "SN23",
+            "name": "Minimum soil temperature (tenths of degrees C) with fallow cover at 20 cm depth",
+            "datacoverage": 0.8757,
+            "mindate": "1983-04-01",
+            "maxdate": "2010-12-31"
+        },
+        {
+            "id": "SN31",
+            "name": "Minimum soil temperature (tenths of degrees C) with bare ground cover at 5 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-01-01",
+            "maxdate": "2014-09-30"
+        },
+        {
+            "id": "SN32",
+            "name": "Minimum soil temperature (tenths of degrees C) with bare ground cover at 10 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-01-01",
+            "maxdate": "2014-09-30"
+        },
+        {
+            "id": "SN33",
+            "name": "Minimum soil temperature (tenths of degrees C) with bare ground cover at 20 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-01-01",
+            "maxdate": "2014-09-30"
+        },
+        {
+            "id": "SN34",
+            "name": "Minimum soil temperature (tenths of degrees C) with bare ground cover at 50 cm depth",
+            "datacoverage": 1,
+            "mindate": "2005-01-01",
+            "maxdate": "2012-07-31"
+        },
+        {
+            "id": "SN35",
+            "name": "Minimum soil temperature (tenths of degrees C) with bare ground cover at 100 cm depth",
+            "datacoverage": 1,
+            "mindate": "2005-01-01",
+            "maxdate": "2014-08-31"
+        },
+        {
+            "id": "SN36",
+            "name": "Minimum soil temperature (tenths of degrees C) with bare ground cover at 150 cm depth",
+            "datacoverage": 1,
+            "mindate": "2006-03-01",
+            "maxdate": "2014-08-31"
+        },
+        {
+            "id": "SN51",
+            "name": "Minimum soil temperature (tenths of degrees C) with sod cover at 5 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-01-01",
+            "maxdate": "2014-09-30"
+        },
+        {
+            "id": "SN52",
+            "name": "Minimum soil temperature (tenths of degrees C) with sod cover at 10 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-01-01",
+            "maxdate": "2014-09-30"
+        },
+        {
+            "id": "SN53",
+            "name": "Minimum soil temperature (tenths of degrees C) with sod cover at 20 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-01-01",
+            "maxdate": "2014-08-31"
+        },
+        {
+            "id": "SN54",
+            "name": "Minimum soil temperature (tenths of degrees C) with sod cover at 50 cm depth",
+            "datacoverage": 1,
+            "mindate": "2002-03-01",
+            "maxdate": "2012-06-30"
+        },
+        {
+            "id": "SN55",
+            "name": "Minimum soil temperature (tenths of degrees C) with sod cover at 100 cm depth",
+            "datacoverage": 1,
+            "mindate": "2002-03-01",
+            "maxdate": "2014-08-31"
+        },
+        {
+            "id": "SN56",
+            "name": "Minimum soil temperature (tenths of degrees C) with sod cover at 150 cm depth",
+            "datacoverage": 1,
+            "mindate": "2012-09-27",
+            "maxdate": "2014-08-31"
+        },
+        {
+            "id": "SN61",
+            "name": "Minimum soil temperature (tenths of degrees C) with straw multch cover at 5 cm depth",
+            "datacoverage": 0.9791,
+            "mindate": "1982-01-01",
+            "maxdate": "1993-01-31"
+        },
+        {
+            "id": "SN72",
+            "name": "Minimum soil temperature (tenths of degrees C) with grass muck cover at 10 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-06-01",
+            "maxdate": "1990-10-31"
+        },
+        {
+            "id": "SN81",
+            "name": "Minimum soil temperature (tenths of degrees C) with bare muck cover at 5 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-06-01",
+            "maxdate": "1990-10-31"
+        },
+        {
+            "id": "SN82",
+            "name": "Minimum soil temperature (tenths of degrees C) with bare muck cover at 10 cm depth",
+            "datacoverage": 0.9997,
+            "mindate": "1982-06-01",
+            "maxdate": "1990-10-31"
+        },
+        {
+            "id": "SN83",
+            "name": "Minimum soil temperature (tenths of degrees C) with bare muck cover at 20 cm depth",
+            "datacoverage": 0.9997,
+            "mindate": "1982-06-01",
+            "maxdate": "1990-10-31"
+        },
+        {
+            "id": "SNOW",
+            "name": "Snowfall (mm)",
+            "datacoverage": 1,
+            "mindate": "1846-11-25",
+            "maxdate": "2014-10-12"
+        },
+        {
+            "id": "SNWD",
+            "name": "Snow depth (mm)",
+            "datacoverage": 1,
+            "mindate": "1857-01-18",
+            "maxdate": "2014-10-11"
+        },
+        {
+            "id": "SX01",
+            "name": "Maximum soil temperature (tenths of degrees C) with unknown cover at 5 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-01-01",
+            "maxdate": "2009-08-31"
+        },
+        {
+            "id": "SX02",
+            "name": "Maximum soil temperature (tenths of degrees C) with unknown cover at 10 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-01-01",
+            "maxdate": "2012-10-31"
+        },
+        {
+            "id": "SX03",
+            "name": "Maximum soil temperature (tenths of degrees C) with unknown cover at 20 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-01-01",
+            "maxdate": "2010-01-10"
+        },
+        {
+            "id": "SX11",
+            "name": "Maximum soil temperature (tenths of degrees C) with grass cover at 5 cm depth",
+            "datacoverage": 0.9677,
+            "mindate": "1982-01-01",
+            "maxdate": "2012-02-29"
+        },
+        {
+            "id": "SX12",
+            "name": "Maximum soil temperature (tenths of degrees C) with grass cover at 10 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-01-01",
+            "maxdate": "2012-09-30"
+        },
+        {
+            "id": "SX13",
+            "name": "Maximum soil temperature (tenths of degrees C) with grass cover at 20 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-01-01",
+            "maxdate": "2012-02-29"
+        },
+        {
+            "id": "SX14",
+            "name": "Maximum soil temperature (tenths of degrees C) with grass cover at 50 cm depth",
+            "datacoverage": 1,
+            "mindate": "2009-03-01",
+            "maxdate": "2011-02-28"
+        },
+        {
+            "id": "SX15",
+            "name": "Maximum soil temperature (tenths of degrees C) with grass cover at 100 cm depth",
+            "datacoverage": 1,
+            "mindate": "2011-08-01",
+            "maxdate": "2012-06-30"
+        },
+        {
+            "id": "SX17",
+            "name": "Maximum soil temperature (tenths of degrees C) with grass cover at 180 cm depth",
+            "datacoverage": 1,
+            "mindate": "2011-08-01",
+            "maxdate": "2012-06-30"
+        },
+        {
+            "id": "SX21",
+            "name": "Maximum soil temperature (tenths of degrees C) with fallow cover at 5 cm depth",
+            "datacoverage": 1,
+            "mindate": "1983-07-01",
+            "maxdate": "2010-12-31"
+        },
+        {
+            "id": "SX22",
+            "name": "Maximum soil temperature (tenths of degrees C) with fallow cover at 10 cm depth",
+            "datacoverage": 1,
+            "mindate": "1983-04-01",
+            "maxdate": "2010-12-31"
+        },
+        {
+            "id": "SX23",
+            "name": "Maximum soil temperature (tenths of degrees C) with fallow cover at 20 cm depth",
+            "datacoverage": 0.8761,
+            "mindate": "1983-04-01",
+            "maxdate": "2010-12-31"
+        },
+        {
+            "id": "SX31",
+            "name": "Maximum soil temperature (tenths of degrees C) with bare ground cover at 5 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-01-01",
+            "maxdate": "2014-09-30"
+        },
+        {
+            "id": "SX32",
+            "name": "Maximum soil temperature (tenths of degrees C) with bare ground cover at 10 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-01-01",
+            "maxdate": "2014-09-30"
+        },
+        {
+            "id": "SX33",
+            "name": "Maximum soil temperature (tenths of degrees C) with bare ground cover at 20 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-01-01",
+            "maxdate": "2014-09-30"
+        },
+        {
+            "id": "SX34",
+            "name": "Maximum soil temperature (tenths of degrees C) with bare ground cover at 50 cm depth",
+            "datacoverage": 0.9981,
+            "mindate": "2005-01-01",
+            "maxdate": "2012-07-31"
+        },
+        {
+            "id": "SX35",
+            "name": "Maximum soil temperature (tenths of degrees C) with bare ground cover at 100 cm depth",
+            "datacoverage": 0.9984,
+            "mindate": "2005-01-01",
+            "maxdate": "2014-08-31"
+        },
+        {
+            "id": "SX36",
+            "name": "Maximum soil temperature (tenths of degrees C) with bare ground cover at 150 cm depth",
+            "datacoverage": 1,
+            "mindate": "2011-01-01",
+            "maxdate": "2014-08-31"
+        },
+        {
+            "id": "SX51",
+            "name": "Maximum soil temperature (tenths of degrees C) with sod cover at 5 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-01-01",
+            "maxdate": "2014-09-30"
+        },
+        {
+            "id": "SX52",
+            "name": "Maximum soil temperature (tenths of degrees C) with sod cover at 10 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-01-01",
+            "maxdate": "2014-09-30"
+        },
+        {
+            "id": "SX53",
+            "name": "Maximum soil temperature (tenths of degrees C) with sod cover at 20 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-01-01",
+            "maxdate": "2014-08-31"
+        },
+        {
+            "id": "SX54",
+            "name": "Maximum soil temperature (tenths of degrees C) with sod cover at 50 cm depth",
+            "datacoverage": 1,
+            "mindate": "2002-03-01",
+            "maxdate": "2012-06-30"
+        },
+        {
+            "id": "SX55",
+            "name": "Maximum soil temperature (tenths of degrees C) with sod cover at 100 cm depth",
+            "datacoverage": 1,
+            "mindate": "2002-03-01",
+            "maxdate": "2014-08-31"
+        },
+        {
+            "id": "SX56",
+            "name": "Maximum soil temperature (tenths of degrees C) with sod cover at 150 cm depth",
+            "datacoverage": 1,
+            "mindate": "2012-09-27",
+            "maxdate": "2014-08-31"
+        },
+        {
+            "id": "SX61",
+            "name": "Maximum soil temperature (tenths of degrees C) with straw multch cover at 5 cm depth",
+            "datacoverage": 0.9799,
+            "mindate": "1982-01-01",
+            "maxdate": "1996-11-30"
+        },
+        {
+            "id": "SX72",
+            "name": "Maximum soil temperature (tenths of degrees C) with grass muck cover at 10 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-06-01",
+            "maxdate": "1990-10-31"
+        },
+        {
+            "id": "SX81",
+            "name": "Maximum soil temperature (tenths of degrees C) with bare muck cover at 5 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-06-01",
+            "maxdate": "1990-10-31"
+        },
+        {
+            "id": "SX82",
+            "name": "Maximum soil temperature (tenths of degrees C) with bare muck cover at 10 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-06-01",
+            "maxdate": "1990-10-31"
+        },
+        {
+            "id": "SX83",
+            "name": "Maximum soil temperature (tenths of degrees C) with bare muck cover at 20 cm depth",
+            "datacoverage": 1,
+            "mindate": "1982-06-01",
+            "maxdate": "1990-10-31"
+        },
+        {
+            "id": "THIC",
+            "name": "Thickness of ice on water (tenths of mm)",
+            "datacoverage": 1,
+            "mindate": "1926-03-17",
+            "maxdate": "2014-08-31"
+        },
+        {
+            "id": "TMAX",
+            "name": "Maximum temperature (tenths of degrees C)",
+            "datacoverage": 1,
+            "mindate": "1763-01-01",
+            "maxdate": "2014-10-12"
+        },
+        {
+            "id": "TMIN",
+            "name": "Minimum temperature (tenths of degrees C)",
+            "datacoverage": 1,
+            "mindate": "1763-01-01",
+            "maxdate": "2014-10-12"
+        },
+        {
+            "id": "TOBS",
+            "name": "Temperature at the time of observation (tenths of degrees C)",
+            "datacoverage": 1,
+            "mindate": "1876-01-01",
+            "maxdate": "2014-10-11"
+        },
+        {
+            "id": "TSUN",
+            "name": "Daily total sunshine (minutes)",
+            "datacoverage": 1,
+            "mindate": "1965-01-01",
+            "maxdate": "2014-10-09"
+        },
+        {
+            "id": "WDF1",
+            "name": "Direction of fastest 1-minute wind (degrees)",
+            "datacoverage": 1,
+            "mindate": "1965-01-01",
+            "maxdate": "1996-06-30"
+        },
+        {
+            "id": "WDF2",
+            "name": "Direction of fastest 2-minute wind (degrees)",
+            "datacoverage": 1,
+            "mindate": "1993-06-01",
+            "maxdate": "2014-10-10"
+        },
+        {
+            "id": "WDF5",
+            "name": "Direction of fastest 5-second wind (degrees)",
+            "datacoverage": 1,
+            "mindate": "1993-06-01",
+            "maxdate": "2014-10-10"
+        },
+        {
+            "id": "WDFG",
+            "name": "Direction of peak wind gust (degrees)",
+            "datacoverage": 1,
+            "mindate": "1948-01-01",
+            "maxdate": "2014-09-30"
+        },
+        {
+            "id": "WDFI",
+            "name": "Direction of highest instantaneous wind (degrees)",
+            "datacoverage": 1,
+            "mindate": "1965-01-01",
+            "maxdate": "1981-02-03"
+        },
+        {
+            "id": "WDFM",
+            "name": "Fastest mile wind direction (degrees)",
+            "datacoverage": 1,
+            "mindate": "1965-01-01",
+            "maxdate": "1996-06-30"
+        },
+        {
+            "id": "WDMV",
+            "name": "24-hour wind movement (km)",
+            "datacoverage": 1,
+            "mindate": "1859-10-01",
+            "maxdate": "2014-09-30"
+        },
+        {
+            "id": "WESD",
+            "name": "Water equivalent of snow on the ground (tenths of mm)",
+            "datacoverage": 1,
+            "mindate": "1952-07-01",
+            "maxdate": "2014-10-11"
+        },
+        {
+            "id": "WESF",
+            "name": "Water equivalent of snowfall (tenths of mm)",
+            "datacoverage": 1,
+            "mindate": "1998-06-01",
+            "maxdate": "2014-10-11"
+        },
+        {
+            "id": "WSF1",
+            "name": "Fastest 1-minute wind speed (tenths of meters per second)",
+            "datacoverage": 1,
+            "mindate": "1965-01-01",
+            "maxdate": "1996-06-30"
+        },
+        {
+            "id": "WSF2",
+            "name": "Fastest 2-minute wind speed (tenths of meters per second)",
+            "datacoverage": 1,
+            "mindate": "1993-06-01",
+            "maxdate": "2014-10-10"
+        },
+        {
+            "id": "WSF5",
+            "name": "Fastest 5-second wind speed (tenths of meters per second)",
+            "datacoverage": 1,
+            "mindate": "1993-06-01",
+            "maxdate": "2014-10-10"
+        },
+        {
+            "id": "WSFG",
+            "name": "Peak guest wind speed (tenths of meters per second)",
+            "datacoverage": 1,
+            "mindate": "1948-01-01",
+            "maxdate": "2014-09-30"
+        },
+        {
+            "id": "WSFI",
+            "name": "Highest instantaneous wind speed (tenths of meters per second)",
+            "datacoverage": 1,
+            "mindate": "1965-01-01",
+            "maxdate": "1981-02-03"
+        },
+        {
+            "id": "WSFM",
+            "name": "Fastest mile wind speed (tenths of meters per second)",
+            "datacoverage": 1,
+            "mindate": "1965-01-01",
+            "maxdate": "1996-06-30"
+        },
+        {
+            "id": "WT01",
+            "name": "Fog, ice fog, or freezing fog (may include heavy fog)",
+            "datacoverage": 1,
+            "mindate": "1851-05-19",
+            "maxdate": "2014-10-10"
+        },
+        {
+            "id": "WT02",
+            "name": "Heavy fog or heaving freezing fog (not always distinguished from fog)",
+            "datacoverage": 1,
+            "mindate": "1900-12-23",
+            "maxdate": "2014-10-10"
+        },
+        {
+            "id": "WT03",
+            "name": "Thunder",
+            "datacoverage": 1,
+            "mindate": "1851-04-02",
+            "maxdate": "2014-10-10"
+        },
+        {
+            "id": "WT04",
+            "name": "Ice pellets, sleet, snow pellets, or small hail\" ",
+            "datacoverage": 1,
+            "mindate": "1852-02-20",
+            "maxdate": "2014-10-09"
+        },
+        {
+            "id": "WT05",
+            "name": "Hail (may include small hail)",
+            "datacoverage": 1,
+            "mindate": "1851-04-13",
+            "maxdate": "2014-10-07"
+        },
+        {
+            "id": "WT06",
+            "name": "Glaze or rime ",
+            "datacoverage": 1,
+            "mindate": "1890-03-28",
+            "maxdate": "2014-10-04"
+        },
+        {
+            "id": "WT07",
+            "name": "Dust, volcanic ash, blowing dust, blowing sand, or blowing obstruction",
+            "datacoverage": 1,
+            "mindate": "1891-12-21",
+            "maxdate": "2014-09-27"
+        },
+        {
+            "id": "WT08",
+            "name": "Smoke or haze ",
+            "datacoverage": 1,
+            "mindate": "1851-04-11",
+            "maxdate": "2014-10-09"
+        },
+        {
+            "id": "WT09",
+            "name": "Blowing or drifting snow",
+            "datacoverage": 1,
+            "mindate": "1852-02-12",
+            "maxdate": "2014-10-06"
+        },
+        {
+            "id": "WT10",
+            "name": "Tornado, waterspout, or funnel cloud\" ",
+            "datacoverage": 1,
+            "mindate": "1886-03-20",
+            "maxdate": "2014-09-17"
+        },
+        {
+            "id": "WT11",
+            "name": "High or damaging winds",
+            "datacoverage": 1,
+            "mindate": "1851-04-03",
+            "maxdate": "2014-09-21"
+        },
+        {
+            "id": "WT12",
+            "name": "Blowing spray",
+            "datacoverage": 1,
+            "mindate": "1985-03-07",
+            "maxdate": "2008-01-16"
+        },
+        {
+            "id": "WT13",
+            "name": "Mist",
+            "datacoverage": 1,
+            "mindate": "1996-07-01",
+            "maxdate": "2013-03-31"
+        },
+        {
+            "id": "WT14",
+            "name": "Drizzle",
+            "datacoverage": 1,
+            "mindate": "1851-09-06",
+            "maxdate": "2013-03-31"
+        },
+        {
+            "id": "WT15",
+            "name": "Freezing drizzle ",
+            "datacoverage": 1,
+            "mindate": "1982-03-03",
+            "maxdate": "2013-03-18"
+        },
+        {
+            "id": "WT16",
+            "name": "Rain (may include freezing rain, drizzle, and freezing drizzle)\" ",
+            "datacoverage": 1,
+            "mindate": "1851-04-01",
+            "maxdate": "2013-10-21"
+        },
+        {
+            "id": "WT17",
+            "name": "Freezing rain ",
+            "datacoverage": 1,
+            "mindate": "1984-01-01",
+            "maxdate": "2013-12-06"
+        },
+        {
+            "id": "WT18",
+            "name": "Snow, snow pellets, snow grains, or ice crystals",
+            "datacoverage": 1,
+            "mindate": "1851-04-13",
+            "maxdate": "2013-10-23"
+        },
+        {
+            "id": "WT19",
+            "name": "Unknown source of precipitation ",
+            "datacoverage": 1,
+            "mindate": "1992-11-01",
+            "maxdate": "2013-03-31"
+        },
+        {
+            "id": "WT21",
+            "name": "Ground fog ",
+            "datacoverage": 1,
+            "mindate": "1996-07-01",
+            "maxdate": "2013-03-31"
+        },
+        {
+            "id": "WT22",
+            "name": "Ice fog or freezing fog",
+            "datacoverage": 1,
+            "mindate": "1979-01-01",
+            "maxdate": "2013-03-31"
+        },
+        {
+            "id": "WV01",
+            "name": "Fog, ice fog, or freezing fog (may include heavy fog)",
+            "datacoverage": 1,
+            "mindate": "1996-07-01",
+            "maxdate": "2005-12-24"
+        },
+        {
+            "id": "WV03",
+            "name": "Thunder",
+            "datacoverage": 1,
+            "mindate": "1996-07-02",
+            "maxdate": "2005-12-31"
+        },
+        {
+            "id": "WV07",
+            "name": "Ash, dust, sand, or other blowing obstruction",
+            "datacoverage": 1,
+            "mindate": "1996-07-08",
+            "maxdate": "2005-09-09"
+        },
+        {
+            "id": "WV18",
+            "name": "Snow or ice crystals",
+            "datacoverage": 1,
+            "mindate": "1996-10-21",
+            "maxdate": "2002-02-04"
+        },
+        {
+            "id": "WV20",
+            "name": "Rain or snow shower",
+            "datacoverage": 1,
+            "mindate": "1996-07-01",
+            "maxdate": "2005-12-31"
+        }
+    ],
+    "metadata": {
+        "resultset": {
+            "limit": 1000,
+            "count": 133,
+            "offset": 1
+        }
+    }
+}
