@@ -7,7 +7,7 @@ Weather-Project
 	<li>create NOAAtoken.js file in the routes folder</li>
 	<li>node app.js</li>
 <ul>
-NOAAtoken.js example:		
+<p>NOAAtoken.js example:</p>		
 <pre>var NOAAtoken = "your token here";
 module.exports.NOAAtoken = NOAAtoken;</pre>
 <br>
