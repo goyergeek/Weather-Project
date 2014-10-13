@@ -3,7 +3,8 @@ Weather-Project
 
 <p> Web App project that will retrieve, format, retain, and display data retrieved from NOAA NCDC web api. </p>
 
-<ul>To Be Done:
+<p>To Be Done:</p>
+<ul>
 <li>Build NCDC Web API Interface to retrieve data</li>
 <li>Build out local retention database for several stations.</li>
 <li>Build Web App Framework: node.js, express, jade, stylus</li>
