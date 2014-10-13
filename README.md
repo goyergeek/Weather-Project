@@ -8,6 +8,7 @@ Weather-Project
 		<pre>var NOAAtoken = "your token here";
 module.exports.NOAAtoken = NOAAtoken;</pre>
 	 <li>node app.js</li>
+ <ul>
 
 <p> Web App project that will retrieve, format, retain, and display data retrieved from NOAA NCDC web api. </p>
 
