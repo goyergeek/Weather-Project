@@ -1,7 +1,7 @@
 Weather-Project
 ===============
 
-Web App project that will retrieve, format, retain, and display data retrieved from NOAA NCDC web api.
+p1 Web App project that will retrieve, format, retain, and display data retrieved from NOAA NCDC web api.
 
 To Be Done:
 1. Build NCDC Web API Interface to retrieve data
