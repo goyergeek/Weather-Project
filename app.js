@@ -15,8 +15,16 @@ app.use(express.static('public'));
 app.get('/', index.index);
 app.post('/getData', function(req, res){
 	getData.getData(function(data){
-		res.send(data);		
+		res.send(data);
 	});
+});
+
+app.get('/public/*', function(req, res){
+  res.sendFile(__dirname + req.url);
+});
+
+app.get("*", function(req, res) {
+	res.send("404 baby.", 404);
 });
 
 app.listen(8080);

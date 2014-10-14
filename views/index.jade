@@ -1,7 +1,6 @@
 html
-	head
 	title Weather-Project
+	head
 		include partials/head
-		include ../routes/public/theClick.js
-		body(class="jquery-ui")
-		button(onclick='getData()')	
+	body.jquery-ui
+		button(onclick='getData()' style='width:150px; height:150px') Click Me
