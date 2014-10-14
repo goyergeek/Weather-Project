@@ -1,2 +1,7 @@
 html
-	h1 Hello	
+    head
+        title Weather-Project
+        include partials/head
+        include public/theClick.js
+        body(class="jquery-ui")
+        	button(onclick='getData()')	
