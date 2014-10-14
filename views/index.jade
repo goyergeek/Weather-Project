@@ -3,4 +3,18 @@ html
 	head
 		include partials/head
 	body.jquery-ui
-		button(onclick='getData()' style='width:150px; height:150px') Click Me
+		button(onclick='getData()') Alert click
+		button(onclick='getFromSite()') Pull from NOAA.
+		div(id = 'append-here')
+		form(id='data-form')
+			datalist(id="datatypelist")
+				option(value="TMAX")
+				option(value="TMIN")
+				option(value="PRCP")
+			p Datatype 1:  
+				input.data1(list="datatypelist")
+			p Datatype 2:  
+				input.data2(list="datatypelist")
+			p Datatype 3:  
+				input.data3(list="datatypelist")
+		button(onclick='getFromSite()') Send form
