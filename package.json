@@ -1,10 +1,23 @@
 {
 	"name" : "WeatherProject",
 	"version" : "0.0.1",
+	"description": "NOAA Climate Data fetching and formatting.",
+	"homepage": "https://github.com/goyergeek/Weather-Project",
+	"keywords": [],
+	"author": {
+		"name": "Jason Goyer & Wayne Goyer",
+		"email": "nunya@puddintane"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/goyergeek/Weather-Project.git"
+	},
 	"dependencies": {
     	"express": "~4.9.7",
     	"request": "~2.45.0",
     	"jade": "~1.7.0",
-    	"body-parser": "~1.9.0"
+    	"body-parser": "~1.9.0",
+	"jquery": "~2.1.1",
+	"jquery-ui": "~1.10.5"
   }
 }
