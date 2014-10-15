@@ -3,18 +3,79 @@ html
 	head
 		include partials/head
 	body.jquery-ui
-		button(onclick='getData()') Alert click
-		button(onclick='getFromSite()') Pull from NOAA.
-		div(id = 'append-here')
-		form(id='data-form')
-			datalist(id="datatypelist")
-				option(value="TMAX")
-				option(value="TMIN")
-				option(value="PRCP")
-			p Datatype 1:  
-				input.data1(list="datatypelist")
-			p Datatype 2:  
-				input.data2(list="datatypelist")
-			p Datatype 3:  
-				input.data3(list="datatypelist")
+		div(id='header-menu')
+			div(id='header-menu-buttons')
+				button(onclick='getFromSite()') Pull from NOAA.
+				- for(x=2;x<6;x++){
+					button(onclick='getData()') Button #{x}
+				- }
+				p
+		div(id='data-forms')
+			table(border='1', cellpadding='2', cellspacing='2', width='50%')
+				div.column(id='form-div1')
+					td
+						h2 Datasets
+						td
+							h2 Datatypes
+							td
+								h2 Location Id
+								td 
+									h2 Station ID
+									td
+										h2 Date Range
+										td
+											h2 Options
+												tr
+					td
+						- var dSL ={dS1:"GHCND", dS2:"GHCNDMS"}
+								form(id='div-form-dataset')
+									p Dataset 1: 
+										select.data4
+											option(value="#{dSL.dS1}") #{dSL.dS1}
+											option(value="#{dSL.dS2}") #{dSL.dS2}
+									p Dataset 2: 
+										select.data5
+											option(value="#{dSL.dS1}") #{dSL.dS1}
+											option(value="#{dSL.dS2}") #{dSL.dS2}
+					td
+						div.column(id='div-form-datatype')
+							- var dTL = {dT1:"TMAX", dT2:"TMIN", dT3:"PRCP"}
+								form(id='data-form')
+							p Datatype 1:  
+								select.data1
+									option(value="") None
+									option(value="#{dTL.dT1}") #{dTL.dT1}
+									option(value="#{dTL.dT2}") #{dTL.dT2}
+									option(value="#{dTL.dT3}") #{dTL.dT3}
+							p Datatype 2:  
+								select.data2
+									option(value="") None
+									option(value="#{dTL.dT1}") #{dTL.dT1}
+									option(value="#{dTL.dT2}") #{dTL.dT2}
+									option(value="#{dTL.dT3}") #{dTL.dT3}
+							p Datatype 3:  
+								select.data3
+									option(value="") None
+									option(value="#{dTL.dT1}") #{dTL.dT1}
+									option(value="#{dTL.dT2}") #{dTL.dT2}
+									option(value="#{dTL.dT3}") #{dTL.dT3}
+					td
+						div.column(id='div-form-locationid')
+							input.data6(type="radio", name="Stations", value="FIPS:48", id="station_texas")
+							lable(for="station_texas") Texas Stations
+							p
+							input.data6(type="radio", name="Stations", value="FIPS:XX", id="station_alabama")
+							lable(for="station_alabama") Alabama Stations
+					td
+						div.column(id='div-form-stationid')
+							//stationid stuff goes here
+					td
+						div.column(id='div-form-daterange')
+							//daterange stuff goes here
+					td
+						div.colum(id='div-form-options')
+							//options stuff goes here
+		br
 		button(onclick='getFromSite()') Send form
+		br
+		div(id = 'append-here')

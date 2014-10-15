@@ -14,7 +14,6 @@ app.use(express.static('public'));
 app.get('/', index.index);
 
 app.post('/getData', function(req, res){
-
 	var dataTypeData = req.body;
 	getData(dataTypeData, function(data){
 		res.send(data);
