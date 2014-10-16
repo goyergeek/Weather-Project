@@ -1,5 +1,4 @@
-var theClick = require('./public/theClick.js')
-, actions = require('./public/actions.js');
+var actions = require('../public/js/actions.js');
 exports.index = function(req, res){
 	res.render('index');
 };
