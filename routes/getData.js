@@ -3,8 +3,7 @@ var request = require('request');
 var tokenImport = require('./NOAAtoken.js');
 
 var getData = function(queryString, callback){
-	//console.log(queryString.urlParam);
-	//console.log(queryString.urlEndPoint);
+
 	var uri = "http://www.ncdc.noaa.gov/cdo-web/api/v2/"+queryString.urlEndPoint+""+queryString.urlParam+"&limit=1000";
 	console.log(uri);
 	var options = {
@@ -14,8 +13,12 @@ var getData = function(queryString, callback){
 		}
 	};
 	request(options, function(err, res, body){
+		if(err){
+			console.log(err);
+			return err;	
+		} 
 		var data = JSON.parse(body);
-		if(err) console.log(err);
+		console.log(data);
 		callback(data);
 	});
 };
