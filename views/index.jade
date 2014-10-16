@@ -5,9 +5,9 @@ html
 	body.jquery-ui
 		div(id='header-menu')
 			div(id='header-menu-buttons')
-				button(onclick='getFromSite()') Pull from NOAA.
+				button(onclick='dataButtons.placeHolderAlert()') Pull from NOAA.
 				- for(x=2;x<6;x++){
-					button(onclick='getData()') Button #{x}
+					button(onclick='dataButtons.placeHolderAlert()') Button #{x}
 				- }
 				p
 		div(id='data-forms')
@@ -61,21 +61,32 @@ html
 									option(value="#{dTL.dT3}") #{dTL.dT3}
 					td
 						div.column(id='div-form-locationid')
-							input.data6(type="radio", name="Stations", value="FIPS:48", id="station_texas")
-							lable(for="station_texas") Texas Stations
+							input.data6(type="radio", name="Stations", value="FIPS:48", id="station_texas", onClick='formActions.radioSelection(48)')
+							label(for="station_texas") Texas Stations
 							p
-							input.data6(type="radio", name="Stations", value="FIPS:XX", id="station_alabama")
-							lable(for="station_alabama") Alabama Stations
+							input.data6(type="radio", name="Stations", value="FIPS:01", id="station_alabama", onClick='formActions.radioSelection(01)')
+							label(for="station_alabama") Alabama Stations
 					td
 						div.column(id='div-form-stationid')
-							//stationid stuff goes here
+							input.data7(id="stationBox1", type="checkbox", name="stationBox1", value="")
+							label(for="stationBox1") 
+							//#{stationBoxLable1}
+							p
+							input.data8(id="stationBox2", type="checkbox", name="stationBox2", value="")
+							label(for="stationBox2") 
+							//#{stationBoxLable2}
 					td
 						div.column(id='div-form-daterange')
 							//daterange stuff goes here
+							input.data10(id="startDate", type="date", placeholder="YYYY-MM-DD", min="1970-01-01", max="2014-12-31", required="Start and End Dates are Required!")
+							lable(for="startDate") Start Date
+							p
+							input.data11(id="endDate", type="date", placeholder-"YYYY-MM-DD", min="1970-01-01", max="2014-12-31", required="Start and End Dates are Required!")
+							labe(for="endDate") End Date
 					td
 						div.colum(id='div-form-options')
 							//options stuff goes here
 		br
-		button(onclick='getFromSite()') Send form
+		button(onclick='dataButtons.getValuesFromIndexForm()') Send form
 		br
-		div(id = 'append-here')
+		div(id = 'append-here' style = 'overflow: scroll; width: 50%; height: 200px;')
