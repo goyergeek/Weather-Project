@@ -6,11 +6,12 @@ var dataButtons = {
     //array returned from all input types within the form, then calls the ajaxCall method which no longer
     //has to parameterize the string built in the massive getValuesFromIndexForm method.
     showValues : function() {
-       var fields = $.param($(":input").serializeArray(), true);
-       var paramFields = $(":input").serializeArray();
-       alert(paramFields);
+       var fields = $.param($(":input.queryString").serializeArray(), true);
+       alert(fields);
+       var formEndPoint = $(":input.endPoint").val();
+       alert(formEndPoint);
        event.preventDefault();
-       dataButtons.ajaxCall(fields);
+       dataButtons.ajaxCall(formEndPoint,fields);
     },
     // getValuesFromIndexForm : function(){
         //todo: let's rewrite this as a loop that is smart enough to grab the data elements and inject them into the object.
@@ -31,17 +32,17 @@ var dataButtons = {
     //         this.ajaxCall(data);
     //     }
     // },
-    ajaxCall : function(data){
+    ajaxCall : function(formEndPoint,fields){
         //Clear div append-here prior to appending data
         $("#append-here").empty();
         //var pdata = $.param(data, true);
-        var endPoint = "data?";
+        //var endPoint = "data?";
         $.ajax({
             url: "/getData",
             type: "POST",
             data: {
-                urlParam : data, 
-                urlEndPoint: endPoint
+                urlParam : fields, 
+                urlEndPoint: formEndPoint
             },
             beforeSend : function(){
                 $('#append-here').append('<img id="loading" src="/public/img/loading.gif" style="height: 30px; width: 30px" />');

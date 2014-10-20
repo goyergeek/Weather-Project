@@ -2,7 +2,7 @@ html
 	title Weather-Project
 	head
 		include partials/head
-	body.jquery-ui
+	body.jquery-ui(style='background-color:#B0B0B0;')
 		div#menuBar.menu(align="center")
 			div#menuButtons.menu
 				button(onclick='dataButtons.placeHolderAlert()') Pull from NOAA.
@@ -12,8 +12,10 @@ html
 				p
 		div#noaaDataForm.form
 			form#data-form.form(onsubmit="dataButtons.showValues()")
-				table#formTable.table(align="center", border='1', cellpadding='2', cellspacing='2', width='50%')
-					div.column(id='form-div1')
+				input.endPoint(name="endPoint", value="data?", type="hidden")
+				table#formTable.table(align="center", cellpadding='2', cellspacing='2', width='50%', border='1', style='background-color:#FFFFFF; border: 10px solid; border-color:#383838 #989898 #383838 #989898;')
+				
+					div#form-div1.column
 						th Datasets
 						th Datatypes
 						th LocationId
@@ -24,7 +26,7 @@ html
 						td
 							-var dSL ={dS1:"GHCND", dS2:"GHCNDMS"}
 							p 
-								select.data4(name="datasetid", multiple="multiple", required)
+								select.queryString(name="datasetid", multiple="multiple", required)
 									option(value="#{dSL.dS1}") #{dSL.dS1}
 									option(value="#{dSL.dS2}") #{dSL.dS2}
 							// p Dataset 2: 
@@ -32,10 +34,10 @@ html
 							// 		option(value="#{dSL.dS1}") #{dSL.dS1}
 							// 		option(value="#{dSL.dS2}") #{dSL.dS2}
 						td
-							div.column(id='div-form-datatype')
+							div#div-form-datatype.column
 								- var dTL = {dT1:"TMAX", dT2:"TMIN", dT3:"PRCP"}
 								p  
-									select.data1(name="datatypeid", multiple="multiple")
+									select.queryString(name="datatypeid", multiple="multiple")
 										option(value="#{dTL.dT1}") #{dTL.dT1}
 										option(value="#{dTL.dT2}") #{dTL.dT2}
 										option(value="#{dTL.dT3}") #{dTL.dT3}
@@ -52,37 +54,35 @@ html
 								// 		option(value="#{dTL.dT2}") #{dTL.dT2}
 								// 		option(value="#{dTL.dT3}") #{dTL.dT3}
 						td
-							div.column(id='div-form-locationid')
-								input.data6(type="radio", name="locationid", value="FIPS:48", id="station_texas", onClick='formActions.radioSelection(48)')
+							div#div-form-locationid.column
+								input#station_texas.queryString(type="radio", name="locationid", value="FIPS:48", onClick='formActions.radioSelection(48)')
 								label(for="station_texas") Texas Stations
 								p
-								input.data6(type="radio", name="locationid", value="FIPS:01", id="station_alabama", onClick='formActions.radioSelection(01)')
+								input#station_alabama.queryString(type="radio", name="locationid", value="FIPS:01", onClick='formActions.radioSelection(01)')
 								label(for="station_alabama") Alabama Stations
 						td
-							div.column(id='div-form-stationid')
-								input.data7(id="stationBox1", type="checkbox", name="stationid", value="")
+							div#div-form-stationid.column
+								input#stationBox1.queryString(type="checkbox", name="stationid", value="")
 								label(for="stationBox1") 
 								//#{stationBoxLable1}
 								p
-								input.data8(id="stationBox2", type="checkbox", name="stationid", value="")
+								input#stationBox2.queryString(type="checkbox", name="stationid", value="")
 								label(for="stationBox2") 
 								//#{stationBoxLable2}
 						td
-							div.column(id='div-form-daterange')
+							div#div-form-daterange.column
 								//daterange stuff goes here
-								lable(for="startDate") <b>Start Date:</b>        
-								input.data10(id="startDate", name="startdate", type="date", placeholder="YYYY-MM-DD", min="1970-01-01", max="2014-12-31", required="Start and End Dates are Required!")
+								label(for="startDate", style='margin-right: 10px; text-align: right;') <b>Start Date:</b>
+								input#startDate.queryString(name="startdate", type="date", min="1970-01-01", max="2014-12-31", required)
 								p
-								label(for="endDate") <b>End Date:  </b>             
-								input.data11(id="endDate", name="enddate", type="date", placeholder="YYYY-MM-DD", min="1970-01-01", max="2014-12-31", required="Start and End Dates are Required!")
+								label(for="endDate", style='margin-right: 20px; text-align: right;') <b>End Date:</b>
+								input#endDate.queryString(name="enddate", type="date", min="1970-01-01", max="2014-12-31", required)
 						td
-							div.colum(id='div-form-options')
+							div#div-form-options.column
 								//options stuff goes here
 						tr
 						td(style = 'border: 0 solid;')
 							input(type="submit" name="dataSubmit" value="submit")
-		br
 		//button(onclick='dataButtons.getValuesFromIndexForm()') Send form
-		br
 		div#pre-append.output-box(align="center")
-			div#append-here.output-box(align="left", style = 'overflow: scroll; width: 50%; height: 200px; border: 2px solid;')
+			div#append-here.output-box(align="left", style = 'overflow: scroll; width: 50%; height: 200px; border: 10px solid; border-color:#383838 #989898 #383838 #989898; background-color:#000000; color:#00FF00; ')
