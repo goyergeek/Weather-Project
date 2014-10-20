@@ -3,90 +3,86 @@ html
 	head
 		include partials/head
 	body.jquery-ui
-		div(id='header-menu')
-			div(id='header-menu-buttons')
+		div#menuBar.menu(align="center")
+			div#menuButtons.menu
 				button(onclick='dataButtons.placeHolderAlert()') Pull from NOAA.
 				- for(x=2;x<6;x++){
 					button(onclick='dataButtons.placeHolderAlert()') Button #{x}
 				- }
 				p
-		div(id='data-forms')
-			table(border='1', cellpadding='2', cellspacing='2', width='50%')
-				div.column(id='form-div1')
-					td
-						h2 Datasets
-					td
-						h2 Datatypes
-					td
-						h2 Location Id
-					td 
-						h2 Station ID
-					td
-						h2 Date Range
-					td
-						h2 Options
-					tr
-					td
-						- var dSL ={dS1:"GHCND", dS2:"GHCNDMS"}
-								form(id='div-form-dataset')
-									p Dataset 1: 
-										select.data4
-											option(value="#{dSL.dS1}") #{dSL.dS1}
-											option(value="#{dSL.dS2}") #{dSL.dS2}
-									p Dataset 2: 
-										select.data5
-											option(value="#{dSL.dS1}") #{dSL.dS1}
-											option(value="#{dSL.dS2}") #{dSL.dS2}
-					td
-						div.column(id='div-form-datatype')
-							- var dTL = {dT1:"TMAX", dT2:"TMIN", dT3:"PRCP"}
-								form(id='data-form')
-							p Datatype 1:  
-								select.data1
-									option(value="") None
-									option(value="#{dTL.dT1}") #{dTL.dT1}
-									option(value="#{dTL.dT2}") #{dTL.dT2}
-									option(value="#{dTL.dT3}") #{dTL.dT3}
-							p Datatype 2:  
-								select.data2
-									option(value="") None
-									option(value="#{dTL.dT1}") #{dTL.dT1}
-									option(value="#{dTL.dT2}") #{dTL.dT2}
-									option(value="#{dTL.dT3}") #{dTL.dT3}
-							p Datatype 3:  
-								select.data3
-									option(value="") None
-									option(value="#{dTL.dT1}") #{dTL.dT1}
-									option(value="#{dTL.dT2}") #{dTL.dT2}
-									option(value="#{dTL.dT3}") #{dTL.dT3}
-					td
-						div.column(id='div-form-locationid')
-							input.data6(type="radio", name="Stations", value="FIPS:48", id="station_texas", onClick='formActions.radioSelection(48)')
-							label(for="station_texas") Texas Stations
-							p
-							input.data6(type="radio", name="Stations", value="FIPS:01", id="station_alabama", onClick='formActions.radioSelection(01)')
-							label(for="station_alabama") Alabama Stations
-					td
-						div.column(id='div-form-stationid')
-							input.data7(id="stationBox1", type="checkbox", name="stationBox1", value="")
-							label(for="stationBox1") 
-							//#{stationBoxLable1}
-							p
-							input.data8(id="stationBox2", type="checkbox", name="stationBox2", value="")
-							label(for="stationBox2") 
-							//#{stationBoxLable2}
-					td
-						div.column(id='div-form-daterange')
-							//daterange stuff goes here
-							input.data10(id="startDate", type="date", placeholder="YYYY-MM-DD", min="1970-01-01", max="2014-12-31", required="Start and End Dates are Required!")
-							lable(for="startDate") Start Date
-							p
-							input.data11(id="endDate", type="date", placeholder-"YYYY-MM-DD", min="1970-01-01", max="2014-12-31", required="Start and End Dates are Required!")
-							labe(for="endDate") End Date
-					td
-						div.colum(id='div-form-options')
-							//options stuff goes here
+		div#noaaDataForm.form
+			form#data-form.form(onsubmit="dataButtons.showValues()")
+				table#formTable.table(align="center", border='1', cellpadding='2', cellspacing='2', width='50%')
+					div.column(id='form-div1')
+						th Datasets
+						th Datatypes
+						th LocationId
+						th StationId
+						th Date Range
+						th Options
+						tr
+						td
+							-var dSL ={dS1:"GHCND", dS2:"GHCNDMS"}
+							p 
+								select.data4(name="datasetid", multiple="multiple", required)
+									option(value="#{dSL.dS1}") #{dSL.dS1}
+									option(value="#{dSL.dS2}") #{dSL.dS2}
+							// p Dataset 2: 
+							// 	select.data5
+							// 		option(value="#{dSL.dS1}") #{dSL.dS1}
+							// 		option(value="#{dSL.dS2}") #{dSL.dS2}
+						td
+							div.column(id='div-form-datatype')
+								- var dTL = {dT1:"TMAX", dT2:"TMIN", dT3:"PRCP"}
+								p  
+									select.data1(name="datatypeid", multiple="multiple")
+										option(value="#{dTL.dT1}") #{dTL.dT1}
+										option(value="#{dTL.dT2}") #{dTL.dT2}
+										option(value="#{dTL.dT3}") #{dTL.dT3}
+								// p Datatype 2:  
+								// 	select.data2
+								// 		option(value="") None
+								// 		option(value="#{dTL.dT1}") #{dTL.dT1}
+								// 		option(value="#{dTL.dT2}") #{dTL.dT2}
+								// 		option(value="#{dTL.dT3}") #{dTL.dT3}
+								// p Datatype 3:  
+								// 	select.data3
+								// 		option(value="") None
+								// 		option(value="#{dTL.dT1}") #{dTL.dT1}
+								// 		option(value="#{dTL.dT2}") #{dTL.dT2}
+								// 		option(value="#{dTL.dT3}") #{dTL.dT3}
+						td
+							div.column(id='div-form-locationid')
+								input.data6(type="radio", name="locationid", value="FIPS:48", id="station_texas", onClick='formActions.radioSelection(48)')
+								label(for="station_texas") Texas Stations
+								p
+								input.data6(type="radio", name="locationid", value="FIPS:01", id="station_alabama", onClick='formActions.radioSelection(01)')
+								label(for="station_alabama") Alabama Stations
+						td
+							div.column(id='div-form-stationid')
+								input.data7(id="stationBox1", type="checkbox", name="stationid", value="")
+								label(for="stationBox1") 
+								//#{stationBoxLable1}
+								p
+								input.data8(id="stationBox2", type="checkbox", name="stationid", value="")
+								label(for="stationBox2") 
+								//#{stationBoxLable2}
+						td
+							div.column(id='div-form-daterange')
+								//daterange stuff goes here
+								lable(for="startDate") <b>Start Date:</b>        
+								input.data10(id="startDate", name="startdate", type="date", placeholder="YYYY-MM-DD", min="1970-01-01", max="2014-12-31", required="Start and End Dates are Required!")
+								p
+								label(for="endDate") <b>End Date:  </b>             
+								input.data11(id="endDate", name="enddate", type="date", placeholder="YYYY-MM-DD", min="1970-01-01", max="2014-12-31", required="Start and End Dates are Required!")
+						td
+							div.colum(id='div-form-options')
+								//options stuff goes here
+						tr
+						td(style = 'border: 0 solid;')
+							input(type="submit" name="dataSubmit" value="submit")
 		br
-		button(onclick='dataButtons.getValuesFromIndexForm()') Send form
+		//button(onclick='dataButtons.getValuesFromIndexForm()') Send form
 		br
-		div(id = 'append-here' style = 'overflow: scroll; width: 50%; height: 200px;')
+		div#pre-append.output-box(align="center")
+			div#append-here.output-box(align="left", style = 'overflow: scroll; width: 50%; height: 200px; border: 2px solid;')

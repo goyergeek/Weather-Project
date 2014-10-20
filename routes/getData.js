@@ -1,9 +1,8 @@
 // var MongoClient = require('mongodb').MongoClient;
-var request = require('request');
-var tokenImport = require('./NOAAtoken.js');
+var request = require('request'),
+tokenImport = require('./NOAAtoken.js');
 
 var getData = function(queryString, callback){
-
 	var uri = "http://www.ncdc.noaa.gov/cdo-web/api/v2/"+queryString.urlEndPoint+""+queryString.urlParam+"&limit=1000";
 	console.log(uri);
 	var options = {
