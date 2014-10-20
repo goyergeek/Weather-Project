@@ -2,41 +2,19 @@ var dataButtons = {
     placeHolderAlert : function() {
         alert('hello');
     },
-    //This function is called onsubmit for the form and sends a parameterized sting based on the serialized
-    //array returned from all input types within the form, then calls the ajaxCall method which no longer
-    //has to parameterize the string built in the massive getValuesFromIndexForm method.
     showValues : function() {
-       var fields = $.param($(":input.queryString").serializeArray(), true);
-       alert(fields);
-       var formEndPoint = $(":input.endPoint").val();
-       alert(formEndPoint);
-       event.preventDefault();
-       dataButtons.ajaxCall(formEndPoint,fields);
+        //Get and parameterize all input values for the queryString class of form inputs.  .serializeArray() formats the string properly and discards the value of the submit button.
+        var fields = $.param($(":input.queryString").serializeArray(), true);
+        alert(fields);
+        //Get the value from all input values for the endPoint class of form inputs. (data?/dataset?/locationid?)
+        var formEndPoint = $(":input.endPoint").val();
+        //Prevent the default event action for the submit button.  This prevents the submit button from attempting to GET/POST and reloading the page.
+        event.preventDefault();
+        this.ajaxCall(formEndPoint,fields);
     },
-    // getValuesFromIndexForm : function(){
-        //todo: let's rewrite this as a loop that is smart enough to grab the data elements and inject them into the object.
-        // var data = {
-        //     datasetid : [$(".data4").val()],
-        //     datatypeid : [$(".data1").val(), $(".data2").val(), $(".data3").val()],
-        //     locationid :[$(".data6").val()],
-        //     stationid : [$(".data7").val(), $(".data8").val(), $(".data9").val()],
-        //     startdate : [$(".data10").val()],
-        //     enddate : [$(".data11").val()],
-            //limit : [$(".data12").val()],
-            //offset : [$(".data13").val()],
-            //includemetadata : [$(".data14").val()]
-    //     };
-    //     if(!data.startdate[0] || !data.enddate[0]) {
-    //         $('#append-here').append('<h2>Both Start and End Dates are Required, please enter a date and try again</h2></br>');
-    //     } else {
-    //         this.ajaxCall(data);
-    //     }
-    // },
     ajaxCall : function(formEndPoint,fields){
-        //Clear div append-here prior to appending data
         $("#append-here").empty();
-        //var pdata = $.param(data, true);
-        //var endPoint = "data?";
+        alert(fields);
         $.ajax({
             url: "/getData",
             type: "POST",
@@ -62,9 +40,9 @@ var dataButtons = {
 var formActions = {
     radioSelection: function(selection){
         if(selection == 48) {
-            var txStationValues = {stationBox1 : "GHCND:USW00023044", stationBox2 : "GHCND:USW00023080", clearValue: ''}
+            var txStationValues = {stationBox1 : "GHCND:USW00023044", stationBox2 : "GHCND:USC00412794", clearValue: ''}
             $("#stationBox1").prop('value', 'GHCND:USW00023044');
-            $("#stationBox2").prop('value', 'GHCND:USW00023080');
+            $("#stationBox2").prop('value', 'GHCND:USC00412794');
             $("label[for='stationBox1']").text("ELP 1");
             $("label[for='stationBox2']").text("ELP 2");
             } else {
