@@ -2,7 +2,7 @@ html
 	title Weather-Project
 	head
 		include partials/head
-	body.jquery-ui(style='background-color:#B0B0B0;')
+	body.jquery-ui
 		div#menuBar.menu(align="center")
 			div#menuButtons.menu
 				button(onclick='dataButtons.placeHolderAlert()') Pull from NOAA.
@@ -13,8 +13,7 @@ html
 		div#noaaDataForm.form
 			form#data-form.form(onsubmit="dataButtons.showValues()")
 				input.endPoint(name="endPoint", value="data?", type="hidden")
-				table#formTable.table(align="center", cellpadding='2', cellspacing='2', width='50%', border='1', style='background-color:#FFFFFF; border: 10px solid; border-color:#383838 #989898 #383838 #989898;')
-				
+				table#formTable.table
 					div#form-div1.column
 						th Datasets
 						th Datatypes
@@ -29,10 +28,6 @@ html
 								select.queryString(name="datasetid", multiple="multiple", required)
 									option(value="#{dSL.dS1}") #{dSL.dS1}
 									option(value="#{dSL.dS2}") #{dSL.dS2}
-							// p Dataset 2: 
-							// 	select.data5
-							// 		option(value="#{dSL.dS1}") #{dSL.dS1}
-							// 		option(value="#{dSL.dS2}") #{dSL.dS2}
 						td
 							div#div-form-datatype.column
 								- var dTL = {dT1:"TMAX", dT2:"TMIN", dT3:"PRCP"}
@@ -41,18 +36,6 @@ html
 										option(value="#{dTL.dT1}") #{dTL.dT1}
 										option(value="#{dTL.dT2}") #{dTL.dT2}
 										option(value="#{dTL.dT3}") #{dTL.dT3}
-								// p Datatype 2:  
-								// 	select.data2
-								// 		option(value="") None
-								// 		option(value="#{dTL.dT1}") #{dTL.dT1}
-								// 		option(value="#{dTL.dT2}") #{dTL.dT2}
-								// 		option(value="#{dTL.dT3}") #{dTL.dT3}
-								// p Datatype 3:  
-								// 	select.data3
-								// 		option(value="") None
-								// 		option(value="#{dTL.dT1}") #{dTL.dT1}
-								// 		option(value="#{dTL.dT2}") #{dTL.dT2}
-								// 		option(value="#{dTL.dT3}") #{dTL.dT3}
 						td
 							div#div-form-locationid.column
 								input#station_texas.queryString(type="radio", name="locationid", value="FIPS:48", onClick='formActions.radioSelection(48)')
@@ -64,25 +47,20 @@ html
 							div#div-form-stationid.column
 								input#stationBox1.queryString(type="checkbox", name="stationid", value="")
 								label(for="stationBox1") 
-								//#{stationBoxLable1}
 								p
 								input#stationBox2.queryString(type="checkbox", name="stationid", value="")
 								label(for="stationBox2") 
-								//#{stationBoxLable2}
 						td
 							div#div-form-daterange.column
-								//daterange stuff goes here
-								label(for="startDate", style='margin-right: 10px; text-align: right;') <b>Start Date:</b>
+								label(for="startDate") <b>Start Date:</b>
 								input#startDate.queryString(name="startdate", type="date", min="1970-01-01", max="2014-12-31", required)
 								p
-								label(for="endDate", style='margin-right: 20px; text-align: right;') <b>End Date:</b>
+								label(for="endDate") <b>End Date:</b>
 								input#endDate.queryString(name="enddate", type="date", min="1970-01-01", max="2014-12-31", required)
 						td
 							div#div-form-options.column
-								//options stuff goes here
 						tr
 						td(style = 'border: 0 solid;')
-							input(type="submit" name="dataSubmit" value="submit")
-		//button(onclick='dataButtons.getValuesFromIndexForm()') Send form
-		div#pre-append.output-box(align="center")
-			div#append-here.output-box(align="left", style = 'overflow: scroll; width: 50%; height: 200px; border: 10px solid; border-color:#383838 #989898 #383838 #989898; background-color:#000000; color:#00FF00; ')
+							input(type="submit" name="dataSubmit" value="submit" onsubmit="dataButtons.showValues()")
+
+		div#append-here.output-box
