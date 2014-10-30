@@ -1,32 +1,48 @@
 var express = require('express')
 , path = require('path')
-, index = require('./routes/index.js')
-, getData = require('./routes/getData.js').getData
-, bodyParser = require('body-parser');
+, mongoose = require('mongoose')
+, routes = require('./routes')
+, bodyParser = require('body-parser')
+,	models = require('./models');
+require('express-mongoose');
+//, locations = mongoose.model('locations');
 
-
-var app = express();
-app.set('views', __dirname+'/views');
-app.set('view engine', 'jade');
-app.use(bodyParser());
-app.use(express.static('public'));
-
-app.get('/', index.index);
-
-app.post('/getData', function(req, res){
-	var dataTypeData = req.body;
-	getData(dataTypeData, function(data){
-		res.send(data);
+mongoose.connect('mongodb://janson.dyndns-ip.com:21501/Weather-Project', function (err) {
+	if (err) throw err;
+	
+	var app = express();
+	app.set('views', __dirname+'/views');
+	app.set('view engine', 'jade');
+	app.use(bodyParser.json());
+	app.use(bodyParser.urlencoded({
+	  extended: true
+	}));
+	app.use(express.static('public'));
+	app.get('/public/*', function(req, res){
+	  res.sendFile(__dirname + req.url);
 	});
+	routes(app);
+	app.get("*", function(req, res) {
+		res.status(404).send("404 baby.");
+	});
+
+	app.listen(process.env.PORT || 8080);
+	console.log("Started on "+process.env.PORT);
 });
 
-app.get('/public/*', function(req, res){
-  res.sendFile(__dirname + req.url);
-});
+// var app = express();
 
-app.get("*", function(req, res) {
-	res.status(404).send("404 baby.");
-});
 
-app.listen(process.env.PORT || 8080);
-console.log("Started on "+process.env.PORT);
+
+// app.get('/', index.index);
+
+// app.post('/getData', function(req, res){
+// 	var dataTypeData = req.body;
+// 	getData.getData(dataTypeData, function(data){
+// 		res.send(data);
+// 	});
+// });
+
+
+
+

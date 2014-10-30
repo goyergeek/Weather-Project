@@ -2,16 +2,18 @@ var dataButtons = {
     placeHolderAlert : function() {
         alert('hello');
     },
-    showValues : function() {
-        //Get and parameterize all input values for the queryString class of form inputs.  .serializeArray() formats the string properly and discards the value of the submit button.
+    dataQuery : function() {
         var fields = $.param($(":input.queryString").serializeArray(), true);
-        //alert(fields);
-        //Get the value from all input values for the endPoint class of form inputs. (data?/dataset?/locationid?)
         var formEndPoint = $(":input.endPoint").val();
-        //Prevent the default event action for the submit button.  This prevents the submit button from attempting to GET/POST and reloading the page.
         event.preventDefault();
         this.ajaxCall(formEndPoint,fields);
     },
+    locationsQuery : function() {
+        var fields = "&locationcategoryid=ST&limit=52";
+        var formEndPoint = "locations?";
+        this.ajaxCall(formEndPoint, fields);
+    },
+    
     ajaxCall : function(formEndPoint,fields){
         $("#append-here").empty();
         //alert(fields);
@@ -23,15 +25,25 @@ var dataButtons = {
                 urlEndPoint: formEndPoint
             },
             beforeSend : function(){
-                $('#append-here').append('<img id="loading" src="/public/img/loading.gif" style="height: 30px; width: 30px"/>');
+                $('#append-here').append('<img class="loading" src="/public/img/loading.gif"/>');
             },
             error : function(err){
                 $('#append-here').append(err);
             }
             }).done(function(response){
                 $('#loading').remove();
-                $('#append-here').append('<code>'+JSON.stringify(response)+'</code>'+'</br>');
+                $('#append-here').empty();
+                $('#append-here').append('<code>'+JSON.stringify(response.results)+'</code>'+'</br>');
             });
+    },
+    getFromLayoutArray: function(data){
+        $('#append-here').empty();
+        for(i=0;i<data[0].datasets.length;i++) {
+            tempVar = data[0].datasets[i];
+            $('#append-here').append('<code>'+JSON.stringify(tempVar)+'</code>'+'</br>');
+        }
+        //return a value from the layoutArray to #append-here
+        //$('#append-here').append('<code>'+JSON.stringify(data)+'</code>');
     }
 };
 
@@ -51,10 +63,5 @@ var formActions = {
                 $("#stationBox2").prop('value', 'GHCND:USW00013928');
                 $("label[for='stationBox2']").text("ATL 2");
             }
-        },
-    checkBoxSelection: function(selection){
-        if($(selection).prop('checked')){
-            $(selection).prop('value', this.radioSelection.stationValues.stationBox1);
         }
-    }    
 };

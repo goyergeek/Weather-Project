@@ -4,8 +4,12 @@
 .menu {
     text-align: center;
 }
+.menu button {
+    margin-right: 2px;
+    margin-left: 2px;
+}
 .table{
-    text-align: center;
+    /*text-align: center;*/
     margin-left: auto;
     margin-right: auto;
     width: 50%;
@@ -20,24 +24,25 @@
 td, th{
     border: 1px solid black;
     padding: 2px;
+    margin: auto;
+}
+.date {
+    width: 150px;
 }
 
-#div-form-daterange .column label {
+#startDate, #endDate {
+    display: inline-block;
+    /*margin-left: auto;*/
+}
+
+.multipleSelect{
+    text-align: center;
+}
+.dateColumn {
     text-align: right;
+    width: 220px;
+    margin-right: 25px;
 }
-
-#div-form-daterange .column label:nth-child(1) {
-    margin-right: 10px;
-}
-
-#div-form-daterange .column label:nth-child(2) {
-    margin-right: 10px;
-}
-
-#div-form-daterange .column input {
-    margin-right: 15px;
-}
-
 
 .output-box{
     overflow: scroll;
@@ -49,4 +54,10 @@ td, th{
     border-color: #383838 #989898 #383838 #989898;
     background-color: #000000;
     color:#00FF00;
+}
+.loading {
+    display: block;
+    margin: auto;
+    max-height: 50px;
+    max-width: 50px;
 }
