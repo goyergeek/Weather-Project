@@ -7,7 +7,7 @@ var express = require('express')
 require('express-mongoose');
 //, locations = mongoose.model('locations');
 
-mongoose.connect('mongodb://janson.dyndns-ip.com:21501/Weather-Project', function (err) {
+mongoose.connect('mongodb://your.host.here/Weather-Project', function (err) {
 	if (err) throw err;
 	
 	var app = express();
