@@ -1,27 +1,24 @@
-var getData = require('./getData.js')
+var errors = require('./errors')
+,   login = require('./login')
 ,   mongoose = require('mongoose');
-//,   models = require('./models')
-//,   locations = mongoose.model('locations');
+var layoutData = mongoose.model('layoutData');
 
 module.exports = function(app) {
     
     app.get('/', function (req, res, next) {
-        getData.testData(function(layoutData){
-            res.render('index.jade', {layoutArray: layoutData});
+        layoutData.find({}, function (err, layoutData) {
+            if (err) return next(err);
+            //console.log(layoutData);
+            var layout = layoutData;
+            console.log(layout);
+            res.render('home.jade', {layout: layout});
         });
     });
-};
     
-
-// var getLayoutData = function(callback){
-//     formOption.testData(function(layoutArray){
-//         callback(layoutArray);
-//     });
-// };
-
-
-// getData.testData(function(layoutData){
-//         layoutData = JSON.stringify(layoutData);
-//         res.render('index.jade', {layoutArray: layoutData});
-//     });
-// };
+    //Login and Logout Routes
+    login(app);
+    
+    //error handlers
+    errors(app);
+    
+};

@@ -1,0 +1,30 @@
+html5
+    head
+        include partials/head
+        title  #{layout[0].title}
+    body
+        header
+            img(src="/public/img/clouds_blue_sky_banner_1400x99.png" width="100%" height="60px")
+        include ui/navBar
+        div.content
+            section.login
+                    if session.isLoggedIn
+                        li
+                            a(href="/logout") Logout
+                    else
+                        li 
+                            a(href="/login") Login
+                        li
+                            a(href="/signup") Create Account 
+            section.content
+                div.appendHere
+                    ul
+                        each primary, key in layout[0].menu
+                            li 
+                                a(href=primary.value) #{primary.name}
+                                    ul
+                                        each secondary, k in primary.subs
+                                            li
+                                                a(href=secondary.value) #{secondary.name}
+
+                block content

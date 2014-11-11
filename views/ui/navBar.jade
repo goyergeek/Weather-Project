@@ -1,0 +1,19 @@
+div.navBar
+    ul.myMenu
+        each primary, key in layout[0].menu
+            li 
+                a(href=primary.value) #{primary.name}
+                ul.myMenu
+                    each secondary, k in primary.subs
+                        li
+                            a(href=secondary.value) #{secondary.name}
+                            
+        if session.isLoggedIn
+            li <a href="/logout">Logout</a>
+        else
+            li <a href="/login">Login</a>
+        if session.isLoggedIn && session.priv
+            li <a href="#">Admin</a>
+                ul.myMenu
+                    li <a href="#">Create User</a>
+                    li <a href="#">Other Admin Stuff</a>

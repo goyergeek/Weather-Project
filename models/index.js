@@ -1,1 +1,2 @@
-exports.locations = require('./locations');
+exports.User = require('./user');
+exports.layoutData = require('./layoutData');

@@ -1,48 +1,33 @@
-var express = require('express')
-, path = require('path')
-, mongoose = require('mongoose')
-, routes = require('./routes')
-, bodyParser = require('body-parser')
-,	models = require('./models');
+var mongoose = require('mongoose')
+,   express = require('express')
+,   bodyParser = require('body-parser');
+
+
 require('express-mongoose');
-//, locations = mongoose.model('locations');
 
-mongoose.connect('mongodb://your.host.here/Weather-Project', function (err) {
-	if (err) throw err;
-	
-	var app = express();
-	app.set('views', __dirname+'/views');
-	app.set('view engine', 'jade');
-	app.use(bodyParser.json());
-	app.use(bodyParser.urlencoded({
-	  extended: true
-	}));
-	app.use(express.static('public'));
-	app.get('/public/*', function(req, res){
-	  res.sendFile(__dirname + req.url);
-	});
-	routes(app);
-	app.get("*", function(req, res) {
-		res.status(404).send("404 baby.");
-	});
+var models = require('./models')
+,   routes = require('./routes')
+,   middleware = require('./middleware');
+var tokenData = require('./helpers/tokenData');
 
-	app.listen(process.env.PORT || 8080);
+var token = (tokenData.tokens.WPtoken);
+mongoose.connect(token, function (err) {
+    if (err) throw err;
+    var app = express();
+    
+    app.set('views', __dirname+'/views');
+    app.set('view engine', 'jade');
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({extended: true}));
+    app.use(express.static('public'));
+    
+    app.get('/public/*', function(req, res) {
+        res.sendFile(__dirname + req.url);
+    });
+    
+    middleware(app);
+    routes(app);
+    
+    app.listen(process.env.PORT || 8080);
 	console.log("Started on "+process.env.PORT);
 });
-
-// var app = express();
-
-
-
-// app.get('/', index.index);
-
-// app.post('/getData', function(req, res){
-// 	var dataTypeData = req.body;
-// 	getData.getData(dataTypeData, function(data){
-// 		res.send(data);
-// 	});
-// });
-
-
-
-

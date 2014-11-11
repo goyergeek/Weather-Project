@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  if session.isLoggedIn
+    p
+      a(href="/") Home
+      
+    p lll
+    |#{layout._id}

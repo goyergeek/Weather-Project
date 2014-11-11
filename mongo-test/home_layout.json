@@ -1,0 +1,27 @@
+{
+    title: "Weather-Project - Home",
+    header: "/partials/uiHeader",
+    banner: "/clouds_blue_sky_banner_1400x99",
+    navBar: {
+        {
+            name: "Home",
+            value: "<a href=\"/\">Home</a>"
+        },
+        {
+            name: "About",
+            value: "<a href=\"/\">About</a>"
+        },
+        {
+            name: "Docs"
+            value: "<a href=\"/\">Docs</a>"
+        },
+        {
+            name: "Blog"
+            value: "<a href=\"/\">Blog</a>"
+        },
+        {
+            name: "Admin"
+            value: "<a href=\"/admin\">Docs</a>"
+        }
+    }
+}
