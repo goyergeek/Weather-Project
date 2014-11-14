@@ -2,5 +2,6 @@ node_modules
 helpers/tokenData.js
 .c9
 applog.txt
-mongo_test
+mongo-test
 datadminUI
+gitmess.txt

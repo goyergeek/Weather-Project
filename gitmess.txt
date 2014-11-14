@@ -1,32 +1,12 @@
-Re-write phase I, create UI for users and admins
-
-Previous prototying of the admin link to the NCDC web api has been moved
-aside temporarily so that the site structure can be built out and tested.
-Currently only the very basic skeleton of the site is completed and 
-working as expected.
-
-Adds:
-Login\Logout functionality with user collection and session store.
-Basic site layout schemas created for mongoose.
-layouts are in use in the jade layouts and block content.
-Dynamic Nav bar which populates menu items from layout data is completed.
-Moved database login credentials and NOAA web api token to own file.
-Updated .gitignore to correct for missing adminUI file.
-Updated package.json to include express-session, mongoose-express
+Session and control file correction
 
 
-Removes:
-Original Data Admin UI prototype files. This will be re-written for
-use with the new framework.
+Corrected the session handling so the session now updates when user
+is moving from route to route, and on page reloads.  Session data
+is accurate in the mongo session store, and is returned properly to
+the views.
 
-Old files used for testing.
+Updated package.json to reflect correct dependencies and author.
 
-To do:
-Fix Readme.md to reflect new install instructions for token data.
-Add content for UI main page.
-Fine tune layouts in the DB.
-Tune mongoose user schema
-Consrtuct admin UI
-Contruct Blog layout
-Start pushing one commit per day minimum until Admin UI is completed.
+Updated .gitignore to remove mongo-test.
 

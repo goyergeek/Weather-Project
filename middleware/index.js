@@ -3,6 +3,7 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var bodyParser = require('body-parser');
 var tokenData = require('../helpers/tokenData');
+var cookieParser = require('cookie-parser');
 
 module.exports = function (app) {
 
@@ -14,12 +15,13 @@ module.exports = function (app) {
     cookie: {maxAge: 600000},
     saveUninitialized: true,
     resave: true,
+    key: 'session',
     store: new MongoStore({
       url: dbToken 
     })
   }));
   
-  
+  app.use(cookieParser());
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({extended: true}));
   
